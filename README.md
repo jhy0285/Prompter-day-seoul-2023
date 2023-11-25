@@ -64,112 +64,44 @@ AI 가이드 앱 서비스 기능을 구현**하였다.
 
 ## 파일 구조
 ```
-📦src
- ┣ 📂main
- ┃ ┣ 📂java
- ┃ ┃ ┗ 📂com
- ┃ ┃ ┃ ┗ 📂kakao
- ┃ ┃ ┃ ┃ ┗ 📂linknamu
- ┃ ┃ ┃ ┃ ┃ ┣ 📂bookmark
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂controller
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dto
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂validator
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂entity
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂repository
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂service
- ┃ ┃ ┃ ┃ ┃ ┣ 📂bookmarktag
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂controller
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dto
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂entity
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂repository
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂service
- ┃ ┃ ┃ ┃ ┃ ┣ 📂category
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂controller
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dto
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂entity
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂repository
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂service
- ┃ ┃ ┃ ┃ ┃ ┣ 📂core
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂config
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dto
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂encryption
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂exception
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂log
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂redis
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂entity
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂repository
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂service
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂security
- ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂util
- ┃ ┃ ┃ ┃ ┃ ┣ 📂kakao
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂controller
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dto
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂service
- ┃ ┃ ┃ ┃ ┃ ┣ 📂share
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂controller
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dto
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂category
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂workspace
- ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂service
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂category
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂workspace
- ┃ ┃ ┃ ┃ ┃ ┣ 📂tag
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂entity
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂repository
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂service
- ┃ ┃ ┃ ┃ ┃ ┣ 📂thirdparty
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂googleDocs
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂controller
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dto
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂entity
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂repository
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂service
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂util
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂notion
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂controller
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dto
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂entity
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂repository
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂service
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂util
- ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂utils
- ┃ ┃ ┃ ┃ ┃ ┣ 📂user
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂controller
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dto
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂oauth
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂entity
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂constant
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂repository
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂service
- ┃ ┃ ┃ ┃ ┃ ┣ 📂workspace
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂controller
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dto
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂entity
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂constant
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂repository
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂service
- ┃ ┗ 📂resources
+📦lib
+ ┣ 📂model
+ ┃ ┣ 📂request
+ ┃ ┃ ┗ 📜request_fun1.dart
+ ┃ ┗ 📂response
+ ┃ ┃ ┣ 📜response_fun1.dart
+ ┃ ┃ ┗ 📜user_plant_list.dart
+ ┣ 📂provider
+ ┃ ┣ 📜fun1_provider.dart
+ ┃ ┣ 📜fun2_provider.dart
+ ┃ ┗ 📜fun3_provider.dart
+ ┣ 📂utils
+ ┃ ┗ 📜custom_scroll_behavior.dart
+ ┣ 📂view
+ ┃ ┣ 📜fun1_result_screen.dart
+ ┃ ┣ 📜fun1_screen.dart
+ ┃ ┣ 📜fun2_result_screen.dart
+ ┃ ┣ 📜fun2_screen.dart
+ ┃ ┣ 📜fun3_result_screen.dart
+ ┃ ┣ 📜fun3_screen.dart
+ ┃ ┗ 📜main_screen.dart
+ ┣ 📂widget
+ ┃ ┣ 📜age_unit_dropdown_menu.dart
+ ┃ ┣ 📜date_dropdown_menu.dart
+ ┃ ┣ 📜drawer.dart
+ ┃ ┣ 📜good_tip_container_list_column.dart
+ ┃ ┣ 📜header.dart
+ ┃ ┣ 📜main_list_container.dart
+ ┃ ┣ 📜text_input_container.dart
+ ┃ ┣ 📜two_radio_row.dart
+ ┃ ┗ 📜user_plant_dropdown_menu.dart
+ ┗ 📜main.dart
 ```
 
 ## 기술 스택 
-<img src="https://img.shields.io/badge/SpringBoot 3.13-120f0f?style=flat-square&logo=SpringBoot&logoColor=white" width="200" heigt="200"/>
+<img src="https://img.shields.io/badge/Flutter-120f0f?style=flat-square&logo=flutter&logoColor=white" width="200" heigt="200"/>
 
-<img src="https://img.shields.io/badge/SpringSecurity-120f0f?style=flat-square&logo=SpringSecurity&logoColor=white" width="200" heigt="200"/>
-
-<img src="https://img.shields.io/badge/SpringDataJpa-120f0f?style=flat-square&logo=SpringBoot&logoColor=white" width="200" heigt="200"/>
-
-<img src="https://img.shields.io/badge/Redis-120f0f?style=flat-square&logo=Redis&logoColor=white" width="110" heigt="200"/>
-
-<img src="https://img.shields.io/badge/junit5-120f0f?style=flat-square&logo=junit5&logoColor=white" width="110" heigt="200"/>
-
-<img src="https://img.shields.io/badge/MySql-120f0f?style=flat-square&logo=MySql&logoColor=white" width="110" heigt="200"/>
-
-<img src="https://img.shields.io/badge/Docker-120f0f?style=flat-square&logo=Docker&logoColor=white" width="110" heigt="200"/>
-
-<img src="https://img.shields.io/badge/QueryDSL-120f0f?style=flat-square&logo=SpringBoot&logoColor=white" width="140" heigt="200"/>
-
-<img src="https://img.shields.io/badge/Kafka-120f0f?style=flat-square&logo=apachekafka&logoColor=white" width="140" heigt="200"/>
-
+<img src="https://img.shields.io/badge/python-120f0f?style=flat-square&logo=python&logoColor=white" width="200" heigt="200"/>
 
 
 
