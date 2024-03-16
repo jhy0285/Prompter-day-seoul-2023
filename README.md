@@ -53,6 +53,12 @@ IT 와 데이터는 필수인 시장에서 초기 창업자의 딜레마
 기여할 수 있는 신생 서비스들이 더 다양하게 세상에 나올 수 있는 것을 목표로 아이디어를
 구상했다. 우리 팀은 이번 해커톤에서 **Prompt-Only 로상
 
+## 시연-영상
+
+[![MVP 시연 영싱](http://img.youtube.com/vi/10HmaLOv83A/0.jpg)](https://youtu.be/10HmaLOv83A)
+
+
+<iframe width="956" height="538" src="https://www.youtube.com/embed/ozv4q2ov3Mk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## 아키텍쳐
 <img src="https://github.com/jhy0285/Prompter-day-seoul-2023/assets/89145559/f92fbfd8-871b-4489-af47-982128cf6eaa" width="90%"/>
